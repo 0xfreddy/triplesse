@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triple S Ventures </title>
+    <title>Triple S Ventures</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -17,11 +17,13 @@
             flex-direction: column;
             align-items: center;
             font-family: Arial, sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .logo {
             margin-top: 50px;
-            margin-left: 100px;
+            margin-left: 0;
             white-space: pre;
             font-family: monospace;
             color: white;
@@ -36,7 +38,9 @@
                 0.025em 0.05em 0 rgba(0, 0, 255, .75);
             cursor: pointer;
             transition: all 0.3s ease;
-            transform: translateX(50px);
+            transform: none;
+            max-width: 100%;
+            overflow-x: auto;
         }
 
         .logo:hover {
@@ -106,8 +110,10 @@
 
         .tagline {
             margin-top: 20px;
-            font-size: 1.2em;
+            font-size: clamp(1em, 4vw, 1.2em);
             color: #cccccc;
+            text-align: center;
+            padding: 0 10px;
         }
 
         .tagline a {
@@ -125,6 +131,9 @@
             margin-bottom: 50px;
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 10px;
         }
 
         .button {
@@ -136,6 +145,8 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            min-width: 80px;
+            text-align: center;
         }
 
         .button:hover {
@@ -151,7 +162,7 @@
 
         .title {
             margin-top: 30px;
-            font-size: 2em;
+            font-size: clamp(1.5em, 5vw, 2em);
             color: white;
             font-family: 'Roboto', sans-serif;
             font-weight: 300;
@@ -159,6 +170,42 @@
             opacity: 0;
             animation: fadeInLines 2s forwards;
             letter-spacing: 1px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo {
+                font-size: 0.8em;
+                margin-left: 0;
+                transform: none;
+            }
+
+            .button-container {
+                gap: 10px;
+            }
+
+            .button {
+                padding: 8px 16px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 0.6em;
+            }
+
+            .button-container {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .button {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -179,7 +226,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠂⠐⠀⠀⠀⠈⣇⡿⢯⢻⣟⣇⣷⣞⡛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣆⠀⠀⠀⠀⢠⡷⡛⣛⣼⣿⠟⠙⣧⠅⡄⠀⠀⠀⠀⠀⠀⠰⡆⠀⠀⠀⠀⢠⣾⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⢶⠏⠉⠀⠀⠀⠀⠀⠿⢠⣴⡟⡗⡾⡒⠖⠉⠏⠁⠀⠀⠀⠀⣀⢀⣠⣧⣀⣀⠀⠀⠀⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣠⢴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⣠⣷⢿⠋⠁⣿⡏⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⣿⢭⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⢴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⣠⣷⢿⠋⠁⣿⡏⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⢀⡴⢏⡵⠛⠀⠀⠀⠀⢀⣠⡾⠋⠉⠀⠀⠀⠀⠀⠀⢾⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⣀⣼⠛⣲⡏⠁⠀⠀⠀⠀⠀⢀⣠⡾⠋⠉⠀⠀⠀⠀⠀⠀⣹⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⡴⠟⠀⢰⡯⠄⠀⠀⠀⠀⣠⢴⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
